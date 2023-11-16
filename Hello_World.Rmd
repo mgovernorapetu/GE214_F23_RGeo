@@ -1,5 +1,5 @@
 ---
-title: "Steven Universe"
+title: "Chef Curry's Kitchen"
 output: html_notebook
 ---
 # Worcester Election Data
@@ -40,8 +40,10 @@ tm_shape(precs) +
 ```
 ```{r}
 ```
-
+#Election Results
 ```{r}
+library(dplyr)
+results= read.csv("data/")
 tm_text("Ward_Precinct" , size = "AREA", col="blue")
 
 #that didn't work? how do we learn more about our tm_* (tmap) functions?
@@ -58,5 +60,5 @@ Your task is to make a new section that imports the voting polling stations and 
 polls=read_sf("data/Polling_Locations.geojson")
 woo_map2 = tm_shape(polls) + tm_symbols()
 woo_map1+woo_map2
-```
+
 
